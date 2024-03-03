@@ -13,8 +13,6 @@ MYSQL_PORT = os.environ.get("MYSQL_PORT", 3306)
 MYSQL_SSL = os.environ.get("MYSQL_SSL")
 
 sql_url = f"mysql+mysqlconnector://{MYSQL_USER}:{MYSQL_PASS}@{MYSQL_HOST}:{MYSQL_PORT}/{MYSQL_DATABASE}"
-if MYSQL_SSL:
-    sql_url = f"{sql_url}?ssl_mode={MYSQL_SSL}"
 
 engine = create_engine(sql_url)
 
